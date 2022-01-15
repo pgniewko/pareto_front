@@ -4,7 +4,7 @@
 
 DESCRIPTION
 ==================================================
-```pareto_front``` project is a GPU-accelerated open-source code for muli-dimensional Pareto optimization.           
+```pareto_front``` project is a GPU-accelerated open-source code for a multi-dimensional Pareto optimization.           
 
 
 INSTALL
@@ -26,16 +26,16 @@ import torch
 from pareto_front import gpu_pareto_front
 
 N = 2000
-x_small = np.random.rand(N,2)
-x_small[:,1] *= 2
+x_small = np.random.rand(N, 2)
+x_small[:,1] *= 2 * (np.pi)
 x_small[:,0], x_small[:,1] = (abs(np.sqrt(x_small[:,0]) * np.cos(x_small[:,1])), 
                               abs(np.sqrt(x_small[:,0]) * np.sin(x_small[:,1])))
 
 N = 20000
-x_large = np.random.rand(N,2)
+x_large = np.random.rand(N, 2)
 x_large[:,1] *= 2
 x_large[:,0], x_large[:,1] = (abs(np.sqrt(x_large[:,0]) * np.cos(x_large[:,1])), 
-                        abs(np.sqrt(x_large[:,0]) * np.sin(x_large[:,1])))
+                              abs(np.sqrt(x_large[:,0]) * np.sin(x_large[:,1])))
 
 dev = torch.device(cuda)
 x_t_small = torch.tensor(x_small).to(dev)
