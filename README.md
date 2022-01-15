@@ -4,7 +4,7 @@
 
 DESCRIPTION
 ==================================================
-```pareto_front``` project is a GPU-accelerated code for muli-dimensional Pareto optimization.           
+```pareto_front``` project is a GPU-accelerated open-source code for muli-dimensional Pareto optimization.           
 
 
 INSTALL
@@ -68,13 +68,9 @@ plt.tight_layout()
 ![Pareto](./assets/pareto.png)
 
 
-LICENSE
-=======
-The library is open-source. 
-
 COPYRIGHT NOTICE
 ================
-Copyright (C) 2022-, Pawel Gniewek
-Email: gniewko.pablo@gmail.com
-All rights reserved.
-License: MIT
+Copyright (C) 2022-, Pawel Gniewek            
+Email: gniewko.pablo@gmail.com         
+All rights reserved.         
+License: MIT          
