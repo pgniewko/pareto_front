@@ -37,8 +37,9 @@ x_large[:,1] *= 2
 x_large[:,0], x_large[:,1] = (abs(np.sqrt(x_large[:,0]) * np.cos(x_large[:,1])), 
                         abs(np.sqrt(x_large[:,0]) * np.sin(x_large[:,1])))
 
-x_t_small = torch.tensor(x_small)
-x_t_large = torch.tensor(x_large)
+dev = torch.device(cuda)
+x_t_small = torch.tensor(x_small).to(dev)
+x_t_large = torch.tensor(x_large).to(dev)
 fronts_small = gpu_pareto_front(x_t_small)
 fronts_large = gpu_pareto_front(x_t_large, fronts_number=6)
 
@@ -51,7 +52,8 @@ colors = ['red', 'blue', 'green','orange', 'grey', 'black']
 
 for (ax, fronts, x) in zip((ax1, ax2), [fronts_small, fronts_large], [x_small, x_large]):
     for (i,color) in enumerate(colors):
-        d = np.array(x[np.array(fronts[i]),:])
+        fronts_i = fronts[i].cpu()
+        d = np.array(x[np.array(fronts_i),:])
         ax.scatter(d[:,0], d[:,1], c=color)
     
         zipped_lists = zip(d[:,0], d[:,1])
