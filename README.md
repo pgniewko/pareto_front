@@ -25,13 +25,13 @@ import torch
 
 from pareto_front import gpu_pareto_front
 
-N = 200
+N = 2000
 x_small = np.random.rand(N,2)
 x_small[:,1] *= 2
 x_small[:,0], x_small[:,1] = (abs(np.sqrt(x_small[:,0]) * np.cos(x_small[:,1])), 
                               abs(np.sqrt(x_small[:,0]) * np.sin(x_small[:,1])))
 
-N = 2000
+N = 20000
 x_large = np.random.rand(N,2)
 x_large[:,1] *= 2
 x_large[:,0], x_large[:,1] = (abs(np.sqrt(x_large[:,0]) * np.cos(x_large[:,1])), 
