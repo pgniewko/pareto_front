@@ -11,7 +11,7 @@ INSTALL
 =======
 
 ```
-git clone git@github.com:pgniewko/pareto_front.git
+git clone https://github.com/pgniewko/pareto_front.git
 pip install ./pareto_front --user
 ```
 
