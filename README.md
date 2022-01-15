@@ -59,7 +59,6 @@ for (ax, fronts, x) in zip((ax1, ax2), [fronts_small, fronts_large], [x_small, x
         zipped_lists = zip(d[:,0], d[:,1])
         sorted_pairs = sorted(zipped_lists)
 
-        tuples = zip(*sorted_pairs)
         x_sorted, y_sorted = [list(tuple) for tuple in zip(*sorted_pairs)]
         ax.plot(x_sorted, y_sorted, c=color,label=f'{i+1}-ranked front')
 plt.legend(fontsize=15)
